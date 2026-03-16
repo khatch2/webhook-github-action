@@ -16,6 +16,8 @@ jobs:
       - name: Install Render CLI
         run: |
           curl -fsSL https://raw.githubusercontent.com/render-oss/cli/refs/heads/main/bin/install.sh | sh
+      - name: Check status
+        run: render auth status
       - name: Create Deploy
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
